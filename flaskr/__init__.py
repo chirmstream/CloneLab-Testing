@@ -7,9 +7,7 @@ def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        # a default secret that should be overridden by instance config
         SECRET_KEY='dev',
-        # store the database in the instance folder
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
 
@@ -31,7 +29,7 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
-    from . flaskr import db
+    from . import db
     db.init_app(app)
-    
+
     return app
