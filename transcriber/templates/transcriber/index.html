@@ -1,28 +1,18 @@
 {% extends 'base.html' %}
 
+<script src="transcriber/static/script.js"></script>
+
 {% block header %}
-  <h1>{% block title %}Posts{% endblock %}</h1>
-  {% if g.user %}
-    <a class="action" href="{{ url_for('transcriber.create') }}">New</a>
-  {% endif %}
+    <h3>Upload audio file</h3>
+    test text
 {% endblock %}
 
 {% block content %}
-  {% for post in posts %}
-    <article class="post">
-      <header>
-        <div>
-          <h1>{{ post['title'] }}</h1>
-          <div class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
-        </div>
-        {% if g.user['id'] == post['author_id'] %}
-          <a class="action" href="{{ url_for('transcriber.update', id=post['id']) }}">Edit</a>
-        {% endif %}
-      </header>
-      <p class="body">{{ post['body'] }}</p>
-    </article>
-    {% if not loop.last %}
-      <hr>
-    {% endif %}
-  {% endfor %}
+    <div class="drag-image">
+        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <h6>Drag & Drop File Here</h6>
+        <span>OR</span>
+        <button>Browse File</button>
+        <input type="file" hidden>
+    </div>
 {% endblock %}
