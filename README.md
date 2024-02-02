@@ -1,17 +1,7 @@
 # Transcriber
-Transcriber is a web application that allows a user to upload an audio clip, and receive a transcription of what was spoken.
+#### Video Demo:  <https://youtu.be/dcOmge7oiXw>
+#### Description: Transcriber is a web application that allows a user to upload an audio clip, and receive a transcription of what was spoken.
 
-## Features
----
-- Transcribe mp3, wav, aac, flac audio files
-- Transcribe multiple languages (only english tested)
-
-## Requirements
----
-- Flask framework
-- openai-whisper
-- ffmpeg
-- ffmpeg-python
 
 ## About
 ---
@@ -19,8 +9,23 @@ Transcriber is built using the Flask framework with a sqlite3 database.  Flask w
 
 Openai/whisper is what is being used under the hood to perform the transcription.  Transcriber is currently set to use the 'base' model, but it would not be hard to modify the code to use a different model if needed.  You can read more about openai/whisper [here](https://github.com/openai/whisper).
 
-## Installation Guide
+
+## Features
 ---
+- Transcribe mp3, wav, aac, flac audio files
+- Transcribe multiple languages (only english tested)
+
+
+## Getting Started
+---
+### Requirements
+- Flask framework
+- openai-whisper
+- ffmpeg
+- ffmpeg-python
+
+
+### Installation Guide
 Create a virtual Python enviroment (Linux/MacOS command):
 
     mkdir transcriber
@@ -55,7 +60,7 @@ Start Flask development server
 
     flask --app transcriber run --debug
 
-## Other notes:
+## Help:
 ---
 If you need to restart the development server after installation simply reactivate the virtual python enviroment and restart the server
 
@@ -79,6 +84,22 @@ If that doesn't work you can try:
 
     python3 -m pip install urllib3==1.26.6
 
-### License
+
+## Authors
+---
+* chirmstream
+
+
+## License
 ---
 Transcriber's code is released under the MIT license.  See [LICENSE](https://github.com/chirmstream/transcriber/blob/main/LICENSE) for further details.
+
+
+## Acknowledgments
+---
+* Havard CS50
+* [Flask tutorial](https://flask.palletsprojects.com/en/2.3.x/tutorial/)
+
+## Roadmap
+---
+Currently the web server is very simple and is only being used as a proof of concept to see if if my idea would even work.  Afterall it is more of an exercise in testing my programming abilities than anything else.  Since I started the front end with Flask's tutorial flaskr (a very simple blog site) and modified it to fit my needs, in the future I would like to redo the entire front end from scratch to attempt a more modern look.
